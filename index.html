@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>BDE - ENSIBS</title>
+    <meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+
+<div class="bg-g1 size1 flex-w flex-col-c-sb p-l-15 p-r-15 p-t-55 p-b-35 respon1">
+    <span></span>
+
+    <img class="logo" src="img/logo.png"/>
+    <div class="flex-col-c p-t-50 p-b-50">
+        <h3 class="l1-txt1 txt-center p-b-10">
+            <div class="title">Site du BDE ENSIBS</div>
+        </h3>
+
+        <p class="txt-center l1-txt2 p-b-60">
+            Le site est encore en construction, mais il sera bientôt disponible !
+        </p>
+
+        <div class="flex-w flex-c cd100 p-b-82" style="margin: 0; padding: 0;">
+            <div class="flex-col-c-m size2 how-countdown">
+                <span class="l1-txt3 p-b-9 days" id="days">35</span>
+                <span class="s1-txt1">Jours</span>
+            </div>
+
+            <div class="flex-col-c-m size2 how-countdown">
+                <span class="l1-txt3 p-b-9 hours" id="hours">17</span>
+                <span class="s1-txt1">Heures</span>
+            </div>
+
+            <div class="flex-col-c-m size2 how-countdown">
+                <span class="l1-txt3 p-b-9 minutes" id="minutes">50</span>
+                <span class="s1-txt1">Minutes</span>
+            </div>
+
+            <div class="flex-col-c-m size2 how-countdown">
+                <span class="l1-txt3 p-b-9 seconds" id="seconds">39</span>
+                <span class="s1-txt1">Secondes</span>
+            </div>
+        </div>
+
+        <div class="flex-c-m s1-txt2 size3">
+            @ 2021 BDE ENSIBS
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+
+<script>
+    const countDownDate = new Date("Oct 11, 2021 00:00:00").getTime();
+
+    function calcDate() {
+        const now = new Date().getTime();
+
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days
+        document.getElementById("hours").innerHTML = hours
+        document.getElementById("minutes").innerHTML = minutes
+        document.getElementById("seconds").innerHTML = seconds
+    }
+
+    calcDate()
+
+    setInterval(function () {
+        calcDate()
+    }, 1000);
+
+</script>
+</html>
